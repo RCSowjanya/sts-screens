@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>STS</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+       <link rel="stylesheet" href="css/style.css">
+       </head>
+       <body>
+           <!---Home Screen-->
+      <div class="home-scr">
+        <nav class="navbar">
+             <div class="container-fluid">
+                 <div class="d-flex">
+                    <div class="dropdown">
+                        <button class="btn-1 dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+                            CONFIGURE
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                       <a href="trainee.html"><li><button class="dropdown-item" type="button">ADD TRAINEE DETAILS</button></li></a>
+                          <a href="detailes.html"><li><button class="dropdown-item" type="button">ADD DETAILS</button></li></a>
+                         <a href="arc-screen.html"><li><button class="dropdown-item" type="button">ARC TOOL</button></li></a>
+                         <a href="target.html"><li><button class="dropdown-item" type="button">TARGET REGION SCORE</button></li></a>
+                          <li><button class="dropdown-item" type="button">REMOTE FPR SHUTDOWN</button></li>
+                          <li><button class="dropdown-item" type="button">BACKUP DATABASE</button></li>
+                          <li><button class="dropdown-item" type="button">RESTORE DATABASE</button></li>
+                          <li><button class="dropdown-item" type="button">RESTART FPE</button></li>
+                        </ul>
+                      </div>
+                     <p class="after ps-3">AFTER ACTION REVIEW</p>
+                 </div>
+                 <div id="myDIV" class="mx-auto d-flex">
+                    <button type="button" class="btn active" style="margin-left:7px;">MASTER</button>
+                    <button type="button" class="btn">FIRER</button>
+                 </div>
+               <a href="index.html"><img src="images/logo-1.png"  class="logo"></a>
+             </div>
+           </nav>
+           </div>
+            <!---trainee screen-->
+    <div class="trainee">
+        <div class="container">
+            <h3 class="text-center" style="color: #0695BC;font-weight:bold;margin-top:1.5rem;">ADD NEW TRAINEE</h3>
+            
+            <div class="new-trainee mt-3">
+            <div class="row">
+             <div class="col-md-6 trainee-1">
+                 <form>
+        <label>TRAINEE ID:</label> <input type="text" name="trainee id" id="tid" /><br/><br/><br/>
+        <label>TRAINEE NAME:</label> <input type="text" name="trainee name" id="tname" /><br/><br/><br/>
+        <label>COMPANY:</label> <input type="text" name="company" id="company" /><br/><br/><br/>
+      </div>
+        <div class="col-md-6 trainee-1">
+            <label>WEAPON:</label> <input type="text" name="weapon" id="weapon" /><br/><br/><br/>
+          <label>RANK:</label> <input type="text" name="rank" id="rank" /><br/><br/><br/>
+           <label>BACTH ID: </label><input type="text" name="batch id" id="batch" /><br/><br/><br/>
+       <div class="text-end">
+        <input type="reset" value="CLEAR ALL">
+        </div>
+        </form>
+        </div>
+         </div>
+         </div>
+         <!----buttons----->
+        <div class="text-center mt-5">
+          <!--  <button class="btn-3">NEW</button>--->
+            <button type="button" class="btn-3"
+            onclick="document.getElementById('table').style.opacity = '0.4'">
+            NEW</button>
+           </div>
+           <!-----trainee-table-->
+<div class="trainee-tab mt-4">
+    <div class="container">
+        <!--<div class="d-flex justify-content-between ms-4 me-4">
+            <div class="c">
+                <h5 style="color: #BB0000;
+                ">SELECT A TRAINEE TO EDIT</h5>
+                </div>
+                <div class="c">
+                <h6>UPLODE FROM FILES</h6>
+                </div>
+          </div>--->
+    <div class="rounededCorner">
+        <div class="d-flex justify-content-between ms-4 me-4">
+            <div class="c">
+                <h5 style="color: #BB0000;
+                ">SELECT A TRAINEE TO EDIT</h5>
+                </div>
+                <div class="c">
+                <h6>UPLODE FROM FILES</h6>
+                </div>
+          </div>
+            <div class="tab tab-1" style="height:200px; overflow-y:scroll;">
+                <table id="table" class="table table-bordered roundedTable" >
+                     <tr>
+                        <th>TRAINEE ID</th>
+                        <th>TRAINEE NAME</th>
+                        <th>COMPANY</th>
+                        <th>WEAPON</th>
+                        <th>RANK</th>
+                        <th>BATCH ID </th>
+                    </tr>
+     </table>
+            </div>
+        </div>    
+            </div>
+        </div></div></div>
+        <div class="d-grid gap-2 d-md-flex justify-content-center mt-5">
+            <button class="btn-3" onclick="addHtmlTableRow(),document.getElementById('table').style.opacity = '1';">
+              SAVE</button>
+            <button class="btn-3" onclick="editHtmlTbleSelectedRow(),document.getElementById('table').style.opacity = '1';">Edit</button>
+            <button   class="btn-3" onclick="removeSelectedRow(),document.getElementById('table').style.opacity = '1';">Remove</button>
+               <a href="index.html"><button class="btn-3">CLOSE</button></a>
+              </div>
+             <script>
+             var rIndex,
+                table = document.getElementById("table");
+             // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+                    tid = document.getElementById("tid").value,
+                    tname = document.getElementById("tname").value,
+                    company = document.getElementById("company").value;
+                    weapon= document.getElementById("weapon").value;
+                    rank = document.getElementById("rank").value;
+                    batch = document.getElementById("batch").value;
+                }
+            
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    cell4 = newRow.insertCell(3),
+                    cell5 = newRow.insertCell(4),
+                    cell6 = newRow.insertCell(5),
+                    tid   = document.getElementById("tid").value,
+                    tname = document.getElementById("tname").value,
+                    company = document.getElementById("company").value;
+                    weapon = document.getElementById("weapon").value;
+                    rank = document.getElementById("rank").value;
+                    batch = document.getElementById("batch").value;
+                    cell1.innerHTML = tid;
+                    cell2.innerHTML = tname;
+                    cell3.innerHTML = company;
+                    cell4.innerHTML = weapon;
+                    cell5.innerHTML = rank;
+                    cell6.innerHTML = batch;
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            }
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+            for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the selected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("tid").value = this.cells[0].innerHTML;
+                      document.getElementById("tname").value = this.cells[1].innerHTML;
+                      document.getElementById("company").value = this.cells[2].innerHTML;
+                      document.getElementById("weapon").value = this.cells[3].innerHTML;
+                      document.getElementById("rank").value = this.cells[4].innerHTML;
+                      document.getElementById("batch").value = this.cells[5].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var tid = document.getElementById("tid").value,
+                    tname = document.getElementById("tname").value,
+                company= document.getElementById("company").value;
+                weapon= document.getElementById("weapon").value;
+                rank= document.getElementById("rank").value;
+                batch= document.getElementById("batch").value;
+               if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML =tid;
+                table.rows[rIndex].cells[1].innerHTML = tname;
+                table.rows[rIndex].cells[2].innerHTML = company;
+                table.rows[rIndex].cells[3].innerHTML = weapon;
+                table.rows[rIndex].cells[4].innerHTML = rank;
+                table.rows[rIndex].cells[5].innerHTML = batch;
+              }
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("tid").value = "";
+                document.getElementById("tname").value = "";
+                document.getElementById("company").value = "";
+                document.getElementById("weapon").value = "";
+                document.getElementById("rank").value = "";
+                document.getElementById("batch").value = "";
+            }
+        </script>
+       <script>
+           
+          
+       </script>
+    
+       
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        
+    </body>
+</html>        
